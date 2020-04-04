@@ -10,24 +10,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import static android.content.DialogInterface.BUTTON_POSITIVE;
 
 public class DialogForm extends AppCompatDialogFragment implements DialogInterface.OnClickListener {
 
+    String username, password;
     private EditText editTextUsername, editTextPassword;
     private DialogFormListener dialogFormListener;
-    String username, password;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-     //   setContentView(R.layout.activity_dialog_form);
+        //   setContentView(R.layout.activity_dialog_form);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater layoutInflater = getActivity().getLayoutInflater();
-        View view = layoutInflater.inflate(R.layout.activity_dialog_form,null);
+        View view = layoutInflater.inflate(R.layout.activity_dialog_form, null);
 
 
         editTextUsername = view.findViewById(R.id.editTextUsername);
@@ -37,7 +37,7 @@ public class DialogForm extends AppCompatDialogFragment implements DialogInterfa
                 .setTitle("Enter Yor Details")
                 .setMessage("")
                 .setNegativeButton("Cancel", this)
-                .setPositiveButton("Confirm",this);
+                .setPositiveButton("Confirm", this);
 
         return builder.create();
     }
@@ -45,10 +45,10 @@ public class DialogForm extends AppCompatDialogFragment implements DialogInterfa
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
 
-        if (BUTTON_POSITIVE == i){
+        if (BUTTON_POSITIVE == i) {
             username = editTextUsername.getText().toString();
             password = editTextPassword.getText().toString();
-            dialogFormListener.applyText(username,password);
+            dialogFormListener.applyText(username, password);
         }
 //        switch (i){
 //            case BUTTON_POSITIVE
@@ -56,7 +56,7 @@ public class DialogForm extends AppCompatDialogFragment implements DialogInterfa
     }
 
     @Override
-    public void onAttach( Context context) {
+    public void onAttach(Context context) {
         super.onAttach(context);
         try {
             dialogFormListener = (DialogFormListener) context;
@@ -67,7 +67,7 @@ public class DialogForm extends AppCompatDialogFragment implements DialogInterfa
         }
     }
 
-    public interface DialogFormListener{
+    public interface DialogFormListener {
         void applyText(String username, String password);
     }
 }

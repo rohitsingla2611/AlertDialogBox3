@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DDB7A6"
+    android:orientation="vertical"
 
     android:padding="26dp">
 
@@ -10,25 +11,25 @@
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
         android:ems="10"
-        android:textSize="30sp"
         android:hint="@string/username"
 
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textAlignment="gravity"
-        android:layout_marginTop="20sp"
-        android:importantForAutofill="no" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:textSize="30sp"
-        android:textAlignment="gravity"
-        android:hint="@string/password"
-        android:inputType="textPassword"
         android:layout_marginTop="10sp"
-        android:importantForAutofill="no" />
+        android:ems="10"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textAlignment="gravity"
+        android:textSize="30sp" />
 
 </LinearLayout>

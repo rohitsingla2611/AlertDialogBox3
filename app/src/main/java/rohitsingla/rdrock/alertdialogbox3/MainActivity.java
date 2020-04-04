@@ -1,10 +1,11 @@
 package rohitsingla.rdrock.alertdialogbox3;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements DialogForm.DialogFormListener {
 
@@ -17,10 +18,11 @@ public class MainActivity extends AppCompatActivity implements DialogForm.Dialog
         setContentView(R.layout.activity_main);
         initViews();
     }
-    void initViews(){
-        textViewUsername = (TextView)findViewById(R.id.textViewUsername);
-        textViewPassword = (TextView)findViewById(R.id.textViewPassword);
-        buttonOpenDialog = (Button) findViewById(R.id.buttonOpenDialog);
+
+    void initViews() {
+        textViewUsername = findViewById(R.id.textViewUsername);
+        textViewPassword = findViewById(R.id.textViewPassword);
+        buttonOpenDialog = findViewById(R.id.buttonOpenDialog);
 
         buttonOpenDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,9 +32,10 @@ public class MainActivity extends AppCompatActivity implements DialogForm.Dialog
             }
         });
     }
-    void openDialog(){
+
+    void openDialog() {
         DialogForm dialogForm = new DialogForm();
-        dialogForm.show(getSupportFragmentManager(),"Dialog Form");
+        dialogForm.show(getSupportFragmentManager(), "Dialog Form");
     }
 
     @Override
